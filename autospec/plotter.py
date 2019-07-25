@@ -18,15 +18,18 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from verticalscrolledframe import VerticalScrolledFrame
 
-#These are related to the region of spectra that are sensitive to polarization artifacts. This is at high phase angles between 1000 and 1400 nm.
+#These are related to the region of spectra that are sensitive to polarization artifacts. 
+#This is at high phase angles between 1000 and 1400 nm. Update: We are also finding artifacts at smaller phase angles!
 global MIN_WAVELENGTH_ARTIFACT_FREE
 MIN_WAVELENGTH_ARTIFACT_FREE=1000
 global MAX_WAVELENGTH_ARTIFACT_FREE
 MAX_WAVELENGTH_ARTIFACT_FREE=1400
 global MIN_G_ARTIFACT_FREE
-MIN_G_ARTIFACT_FREE=-20
+MIN_G_ARTIFACT_FREE=-5 #updated artifact minimum
+#MIN_G_ARTIFACT_FREE=-20 #original artifact minimum
 global MAX_G_ARTIFACT_FREE
-MAX_G_ARTIFACT_FREE=40
+MAX_G_ARTIFACT_FREE=5 #updated artifact maximum
+#MAX_G_ARTIFACT_FREE=40 #original artifact maximum
 
 class Plotter():
     def __init__(self, controller,dpi, style):
